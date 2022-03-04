@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
                 int age = 22;
                 String sClass = "CNTT 2 - K45";
 
+                //intent.putExtras.
+
                 intent.putExtra(KEY_NAME, sName);
                 intent.putExtra(KEY_AGE, age);
                 intent.putExtra(KEY_CLASS, sClass);

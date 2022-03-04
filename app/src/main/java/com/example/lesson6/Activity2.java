@@ -6,8 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class Activity2 extends AppCompatActivity {
+public class Activity2 extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +18,8 @@ public class Activity2 extends AppCompatActivity {
         TextView tvResult = findViewById(R.id.tv_result);
 
         TextView tvResult2 = findViewById(R.id.tv_result2);
+
+        //Bundle data = getIntent().getExtras();
 
         String sName = getIntent().getStringExtra(MainActivity.KEY_NAME);
         int age = getIntent().getIntExtra(MainActivity.KEY_AGE, 0);
@@ -30,12 +33,12 @@ public class Activity2 extends AppCompatActivity {
 
         tvResult2.setText(monHoc.getsName() + " - " + monHoc.getNumCredit() + " - " + yearCourse);
 
-        findViewById(R.id.btn_click).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+//        findViewById(R.id.btn_click).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                onBackPressed();
+//            }
+//        });
     }
 
     @Override
@@ -47,5 +50,20 @@ public class Activity2 extends AppCompatActivity {
         setResult(RESULT_OK, intent);
 
         super.onBackPressed();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_click:
+                onBackPressed();
+                break;
+            case R.id.tv_result:
+                Toast.makeText(getApplicationContext(), "TV Result 1", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.tv_result2:
+                Toast.makeText(getApplicationContext(), "TV Result 2", Toast.LENGTH_SHORT).show();
+                break;
+        }
     }
 }
