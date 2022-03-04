@@ -16,11 +16,19 @@ public class Activity2 extends AppCompatActivity {
 
         TextView tvResult = findViewById(R.id.tv_result);
 
+        TextView tvResult2 = findViewById(R.id.tv_result2);
+
         String sName = getIntent().getStringExtra(MainActivity.KEY_NAME);
         int age = getIntent().getIntExtra(MainActivity.KEY_AGE, 0);
         String sClass = getIntent().getStringExtra(MainActivity.KEY_CLASS);
 
         tvResult.setText(sName + " - " + age + " - " + sClass);
+
+        MonHoc monHoc = (MonHoc) getIntent().getSerializableExtra(MainActivity.KEY_MONHOC);
+
+        String yearCourse = monHoc.isNewCourse2022() ? "2022" : "2021";
+
+        tvResult2.setText(monHoc.getsName() + " - " + monHoc.getNumCredit() + " - " + yearCourse);
 
         findViewById(R.id.btn_click).setOnClickListener(new View.OnClickListener() {
             @Override

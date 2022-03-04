@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String KEY_NAME = "key_name";
     public static final String KEY_AGE = "key_age";
     public static final String KEY_CLASS = "key_class";
+    public static final String KEY_MONHOC = "key_monhoc";
 
     public static final int REQUEST_CODE_TO_ACTIVITY2 = 101;
 
@@ -47,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra(KEY_NAME, sName);
                 intent.putExtra(KEY_AGE, age);
                 intent.putExtra(KEY_CLASS, sClass);
+
+                MonHoc monHoc = new MonHoc("Lap trinh Android", 3, true);
+
+                intent.putExtra(KEY_MONHOC, monHoc);
 
                 startActivityForResult(intent, REQUEST_CODE_TO_ACTIVITY2);
 
