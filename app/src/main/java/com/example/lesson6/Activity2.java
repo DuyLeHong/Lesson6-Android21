@@ -43,6 +43,18 @@ public class Activity2 extends AppCompatActivity implements View.OnClickListener
 
     public static final String KEY_DATA_FROM_ACTIVITY2 = "data_activity2";
 
+    //String RESULT_OK = "ok";
+
+    //int RESULT_OK = 10;
+
+//    public void doSomeThings() { //overload trong java
+//
+//    }
+//
+//    public int doSomeThings(int _number) {
+//        return _number;
+//    }
+
     @Override
     public void onBackPressed() {
         Intent intent = getIntent();
