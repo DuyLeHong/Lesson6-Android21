@@ -41,11 +41,13 @@ public class Activity2 extends AppCompatActivity implements View.OnClickListener
 //        });
     }
 
+    public static final String KEY_DATA_FROM_ACTIVITY2 = "data_activity2";
+
     @Override
     public void onBackPressed() {
         Intent intent = getIntent();
 
-        intent.putExtra("data2", "Du lieu tra ve: CodeFresher");
+        intent.putExtra(KEY_DATA_FROM_ACTIVITY2, "Du lieu tra ve: CodeFresher 30/5/2022");
 
         setResult(RESULT_OK, intent);
 

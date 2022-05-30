@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Toast;
 
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == REQUEST_CODE_TO_ACTIVITY2) {
             if (resultCode == RESULT_OK) {
-                String sData = data.getStringExtra("data2");
+                String sData = data.getStringExtra(Activity2.KEY_DATA_FROM_ACTIVITY2);
 
                 Toast.makeText(getApplicationContext(), sData, Toast.LENGTH_SHORT).show();
             }
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Activity2.class);
+
+                //startActivity(intent);
 
                 String sName = "Nguyen Hoang Long";
                 int age = 22;

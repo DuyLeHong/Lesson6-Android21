@@ -14,7 +14,6 @@ public class MonHoc implements Serializable {
         this.isNewCourse2022 = isNewCourse2022;
     }
 
-
     public String getsName() {
         return sName;
     }
